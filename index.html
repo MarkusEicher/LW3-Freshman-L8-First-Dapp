@@ -25,7 +25,40 @@
 ></script>
 
 <script>
+    
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
 
+    const MoodContractAddress = "0xAA02B7725B9372B1aBC6bf5b6558906270C76DF8";
+    const MoodContractABI = [
+    {
+        "inputs": [],
+        "name": "getMood",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_mood",
+                "type": "string"
+            }
+        ],
+        "name": "setMood",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+];
+    let MoodContract;
+    let signer;
 </script>
 
 </html>
